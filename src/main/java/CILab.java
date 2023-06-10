@@ -16,6 +16,7 @@ public class CILab implements CILabInterface {
 
     @Override
     public boolean detectCapitalUse() {
+        if (myString.length() == 0) return false;
         if (isLowerCase(myString.charAt(0))) {
             for (int i = 0; i < myString.length(); i++) {
                 if (isUpperCase(myString.charAt(i)))
@@ -37,7 +38,7 @@ public class CILab implements CILabInterface {
                 }
             }
         }
-        return false;
+        return true;
     }
 }
 

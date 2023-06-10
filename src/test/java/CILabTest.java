@@ -1,8 +1,7 @@
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CILabTest {
 
@@ -20,13 +19,24 @@ public class CILabTest {
 
     @Test
     public void detectCapitalUseTest1() {
-       fail("Not yet implemented");
-
+        myString.setString("Google");
+        assertTrue(myString.detectCapitalUse());
+        myString.setString("GOOGLE");
+        assertTrue(myString.detectCapitalUse());
+        myString.setString("google");
+        assertTrue(myString.detectCapitalUse());
     }
     @Test
     public void detectCapitalUseTest2() {
-        fail("Not yet implemented");
+        myString.setString("GOogle");
+        assertFalse(myString.detectCapitalUse());
+        myString.setString("GooGle");
+        assertFalse(myString.detectCapitalUse());
+        myString.setString("GooGLe");
+        assertFalse(myString.detectCapitalUse());
+        myString.setString("GooglE");
+        assertFalse(myString.detectCapitalUse());
+        myString.setString("");
+        assertFalse(myString.detectCapitalUse());
     }
-
-
 }
